@@ -636,7 +636,7 @@ s_tFightFunc[10243][2] = function()
 	if target.nMoveState == MOVE_STATE.ON_DEATH then return end
 
 	--判断目标读条，这里没有做处理，可以判断读条的技能ID做相应处理(打断、迎风回浪、挑起等等)
-	local bPrepare, dwSkillId, dwLevel, nLeftTime, nActionState =  GetSkillOTActionState(target)		--返回 是否在读条, 技能ID，等级，剩余时间(秒)，动作类型
+	local bPrepare, dwSkillId, dwLevel, nLeftTime, nActionState =  GetSkillOTActionState(target)
 
 	--获取自己的buff表
 	local MyBuff = s_util.GetBuffInfo(player)
