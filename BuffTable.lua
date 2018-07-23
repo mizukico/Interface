@@ -87,27 +87,27 @@ end
 --锁足
 s_tBuffFunc.SuoZu = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
-    local IsBuff = or Buff[1937--[[三才化生]]] or Buff[679--[[影痕]]] or Buff[706--[[止水]]] or Buff[4038--[[锁足]]] or Buff[2289--[[五方行尽]]] or Buff[2492--[[百足迷心]]] or Buff[2547--[[天蛛献祭]]] or Buff[1931--[[吐故纳新]]] or Buff[6364--[[滞]]] or Buff[4758--[[禁缚]]] or Buff[5809--[[太乙]]] or Buff[5764--[[百足]]] or Buff[5694--[[太阴指]]] or Buff[5793--[[碎冰]]] or Buff[4436--[[伏夜·缠]]] or Buff[3359--[[铁爪]]] or Buff[8251--[[落雁]]] or Buff[8327--[[断筋]]] or Buff[3216--[[钻心刺骨]]] or Buff[9569--[[剑·羽]]] or Buff[9730--[[钟林毓秀]]] or Buff[10282--[[琴音]]]
+    local IsBuff = Buff[1937--[[三才化生]]] or Buff[679--[[影痕]]] or Buff[706--[[止水]]] or Buff[4038--[[锁足]]] or Buff[2289--[[五方行尽]]] or Buff[2492--[[百足迷心]]] or Buff[2547--[[天蛛献祭]]] or Buff[1931--[[吐故纳新]]] or Buff[6364--[[滞]]] or Buff[4758--[[禁缚]]] or Buff[5809--[[太乙]]] or Buff[5764--[[百足]]] or Buff[5694--[[太阴指]]] or Buff[5793--[[碎冰]]] or Buff[4436--[[伏夜·缠]]] or Buff[3359--[[铁爪]]] or Buff[8251--[[落雁]]] or Buff[8327--[[断筋]]] or Buff[3216--[[钻心刺骨]]] or Buff[9569--[[剑·羽]]] or Buff[9730--[[钟林毓秀]]] or Buff[10282--[[琴音]]]
     return IsBuff
 end
 
 --定身
 s_tBuffFunc.DingShen = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
-    local IsBuff = or Buff[998--[[太阴指]]] or Buff[678--[[傍花随柳]]] or Buff[686--[[帝骖龙翔]]] or Buff[554--[[大道无术]]] or Buff[556--[[七星拱瑞]]] or Buff[675--[[芙蓉并蒂]]] or Buff[737--[[完骨]]] or Buff[1229--[[破势]]] or Buff[1247--[[同归]]] or Buff[4451--[[定身]]] or Buff[1857--[[松涛]]] or Buff[1936--[[绛唇珠袖]]] or Buff[2555--[[丝牵]]] or Buff[6317--[[金针]]] or Buff[6108--[[天绝地灭]]] or Buff[6091--[[迷影]]] or Buff[2311--[[幻蛊]]] or Buff[4437--[[伏夜·定]]] or Buff[6082--[[大道无术]]]
+    local IsBuff = Buff[998--[[太阴指]]] or Buff[678--[[傍花随柳]]] or Buff[686--[[帝骖龙翔]]] or Buff[554--[[大道无术]]] or Buff[556--[[七星拱瑞]]] or Buff[675--[[芙蓉并蒂]]] or Buff[737--[[完骨]]] or Buff[1229--[[破势]]] or Buff[1247--[[同归]]] or Buff[4451--[[定身]]] or Buff[1857--[[松涛]]] or Buff[1936--[[绛唇珠袖]]] or Buff[2555--[[丝牵]]] or Buff[6317--[[金针]]] or Buff[6108--[[天绝地灭]]] or Buff[6091--[[迷影]]] or Buff[2311--[[幻蛊]]] or Buff[4437--[[伏夜·定]]] or Buff[6082--[[大道无术]]]
     return IsBuff
 end
 
 --闪避
 s_tBuffFunc.ShanBi = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
-    local IsBuff = or Buff[3214--[[惊鸿游龙]]] or Buff[2065--[[云栖松]]] or Buff[5668--[[风吹荷]]] or Buff[6434--[[醉逍遥]]] or Buff[6299--[[御风而行]]] or Buff[6174--[[两生]]]
+    local IsBuff = Buff[3214--[[惊鸿游龙]]] or Buff[2065--[[云栖松]]] or Buff[5668--[[风吹荷]]] or Buff[6434--[[醉逍遥]]] or Buff[6299--[[御风而行]]] or Buff[6174--[[两生]]]
     return IsBuff
 end
 
 --封轻功
 s_tBuffFunc.FengQingGong = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
-    local IsBuff = or Buff[562--[[吞日月]]] or Buff[562--[[千丝迷心]]] or Buff[562--[[迷幻]]] or Buff[562--[[身乏]]] or Buff[562--[[滞影]]] or Buff[562--[[玳弦]]] or Buff[1939--[[云景]]] or Buff[6074--[[恶狗拦路]]] or Buff[4497--[[幻相]]] or Buff[535--[[半步颠]]] or Buff[562--[[步残]]] or Buff[10246--[[重围]]] or Buff[562--[[行泽]]]
+    local IsBuff = Buff[562--[[吞日月]]] or Buff[562--[[千丝迷心]]] or Buff[562--[[迷幻]]] or Buff[562--[[身乏]]] or Buff[562--[[滞影]]] or Buff[562--[[玳弦]]] or Buff[1939--[[云景]]] or Buff[6074--[[恶狗拦路]]] or Buff[4497--[[幻相]]] or Buff[535--[[半步颠]]] or Buff[562--[[步残]]] or Buff[10246--[[重围]]] or Buff[562--[[行泽]]]
     return IsBuff
 end

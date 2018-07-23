@@ -837,7 +837,7 @@ s_tFightFunc[10447][2] = function()
 	local laohu=s_util.GetNpc(36688,40)
 	if laohu then SetTarget(TARGET.NPC, laohu.dwID) s_util.TurnTo(laohu.nX,laohu.nY) end
 
-	if distance > 15 then
+	if distance > 6 then
 	s_util.TurnTo(target.nX, target.nY) MoveForwardStart()
 	else
 	MoveForwardStop() s_util.TurnTo(target.nX, target.nY)
@@ -1177,36 +1177,11 @@ s_tFightFunc[10390][2] = function()
 		return
 	end
 	--非战斗状态
-	if not player.bFightState then
-	if not MyBuff[3853] and s_util.GetItemCD(8,5147,true) <1 and Strength >3 then
-	if s_util.UseEquip(8,5147) then end
-	end
-	
-	--如果没有B腰坠buff,并且B腰坠技能CD<1,,并且目标是BOSS使用B腰坠技能 
-	if not MyBuff[3853] and s_util.GetItemCD(8,5147,true) <1 and Strength >3 then
-	  if s_util.UseItem(8,5147) then end
-	end
-	 
-	--如果没有C腰坠buff,并且C腰坠技能CD<1,,并且目标是BOSS切换到C腰坠
-	if not MyBuff[6360] and s_util.GetItemCD(8,19078,true) <1 and Strength >3 then
-	  if s_util.UseEquip(8,19078) then end 
-	end 
-	
-	--如果没有C腰坠buff,并且C腰坠技能CD<1,,并且目标是BOSS使用C腰坠技能  
-	if not MyBuff[6360] and s_util.GetItemCD(8,19078,true) <1 and Strength >3 then
-	  if s_util.UseItem(8,19078) then end
-	end	
-  
-	--如果有B腰坠buff和C腰坠buff,或者B腰坠技能cd>1并且C腰坠技能cd>1,切换到A腰坠
-	 if ( MyBuff[6360] and MyBuff[3853] ) or ( s_util.GetItemCD(8,19078,true) >1 and s_util.GetItemCD(8,5147,true) >1 ) then
-	  if s_util.UseEquip(8,22831) then end
-	end
-	
+  if not player.bFightState then
 	--释放所有血怒
 	if not MyBuff[8385] or MyBuff[8385].nStackNum < 2 then
 	  if s_util.CastSkill(13040, false) then return end
 	end
-	
   --非战斗状态结束
   end	
 	  
