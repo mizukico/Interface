@@ -44,7 +44,7 @@ end
 --无敌 缺少平沙状态
 s_tBuffFunc.WuDi = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
-    local IsBuff = Buff[377--[[镇山河]]] or Buff[961--[[太虚]]] or Buff[772--[[回神]]] or Buff[3425--[[鬼斧神工]]] or Buff[360--[[御]]] or Buff[6182--[[冥泽]]] or Buff[9934--[[南风吐月]]] or Buff[11151--[[散流霞]]] or Buff[682--[[雷霆震怒]]] or Buff[4871--[[无明魂锁]]] or Buff[3224--[[迷神钉]]] or Buff[8438--[[盾立]]] or Buff[2795--[[罗汉金身]]]
+    local IsBuff = Buff[377--[[镇山河]]] or Buff[961--[[太虚]]] or Buff[772--[[回神]]] or Buff[3425--[[鬼斧神工]]] or Buff[360--[[御]]] or Buff[6182--[[冥泽]]] or Buff[9934--[[南风吐月]]] or Buff[11151--[[散流霞]]] or Buff[682--[[雷霆震怒]]] or Buff[4871--[[无明魂锁]]] or Buff[3224--[[迷神钉]]] or Buff[2795--[[罗汉金身]]] or Buff[8303--[[盾立]]] 
     return IsBuff
 end
 
