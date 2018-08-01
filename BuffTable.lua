@@ -40,6 +40,7 @@ s_tBuffFunc.FengChe = function ( tar )
 end
 
 --定义改变面向函数
+--参数：需转动的面向(1~256) ，无返回值
 s_tBuffFunc.ChFace = function ( ang )
     local player = GetClientPlayer() 
     local rd = ((player.nFaceDirection+ang)%256)*math.pi/128
