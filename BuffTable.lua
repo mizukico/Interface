@@ -20,6 +20,34 @@ s_tBuffFunc = {}
     封轻功  s_tBuffFunc.FengQingGong()
 --]]
 
+--定义判断风车函数
+--参数:需要判断的角色
+--返回值：若在需判断的角色10尺内有离手风车返回1，10尺内有读条风车或项王返回2，没有返回false
+s_tBuffFunc.FengChe = function ( tar )
+    local npc = s_util.GetNpc(57739,30)
+    local me = GetClientPlayer()
+    if npc and IsEnemy(me.dwID, npc.dwID) and s_util.GetDistance(tar, npc) <=10 then
+        return 1
+    end
+    for i,v in ipairs(GetAllPlayer()) do		--遍历
+        local  bPrepare, dwSkillId = GetSkillOTActionState(v)
+        if IsEnemy(me.dwID, v.dwID) and (dwSkillId ==1645 or dwSkillId ==16381) then
+            local dis = s_util.GetDistance(tar, v)
+            if dis <=10 then return 2 end
+        end
+    end
+    return false
+end
+
+--定义改变面向函数
+s_tBuffFunc.ChFace = function ( ang )
+    local player = GetClientPlayer() 
+    local rd = ((player.nFaceDirection+ang)%256)*math.pi/128
+    local finX = (128)*math.cos(rd)+player.nX
+    local finY = (128)*math.sin(rd)+player.nY
+    s_util.TurnTo(finX,finY)
+end
+
 --爆发
 s_tBuffFunc.BaoFa = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
