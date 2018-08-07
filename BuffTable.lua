@@ -42,13 +42,17 @@ s_tBuffFunc.FengChe = function ( tar )
 end
 
 --定义改变面向函数
---参数：需转动的面向(1~256) ，无返回值
+--参数：需转动的面向(-128~128) ，无返回值
+--转动面向需要2S间隔，防止无限转向
 s_tBuffFunc.ChFace = function ( ang )
     local player = GetClientPlayer() 
-    local rd = ((player.nFaceDirection+ang)%256)*math.pi/128
-    local finX = (128)*math.cos(rd)+player.nX
-    local finY = (128)*math.sin(rd)+player.nY
-    s_util.TurnTo(finX, finY)
+	local rd = ((player.nFaceDirection+ang)%256)*math.pi/128
+	local finX = (128)*math.cos(rd)+player.nX
+	local finY = (128)*math.sin(rd)+player.nY
+	if not s_util.GetTimer("ChangeFace") or s_util.GetTimer("ChangeFace") > 2000 then
+		s_util.SetTimer("ChangeFace")
+		s_util.TurnTo(finX, finY)
+	end
 end
 
 --爆发
