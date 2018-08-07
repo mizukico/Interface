@@ -18,19 +18,21 @@ s_tBuffFunc = {}
     定身    s_tBuffFunc.DingShen()
     闪避    s_tBuffFunc.ShanBi()
     封轻功  s_tBuffFunc.FengQingGong()
+    免封内  s_tBuffFunc.MianFengNei()
+    免推    s_tBuffFunc.MianTui()
 --]]
 
 --定义判断风车函数
 --参数:需要判断的角色
 --返回值：若在需判断的角色10尺内有离手风车返回1，10尺内有读条风车或项王返回2，没有返回false
 s_tBuffFunc.FengChe = function ( tar )
-    local npc = s_util.GetNpc(57739,30)
+    local npc = s_util.GetNpc(57739, 30)
     local me = GetClientPlayer()
     if npc and IsEnemy(me.dwID, npc.dwID) and s_util.GetDistance(tar, npc) <=10 then
         return 1
     end
     for i,v in ipairs(GetAllPlayer()) do		--遍历
-        local  bPrepare, dwSkillId = GetSkillOTActionState(v)
+        local  bPrepare,dwSkillId = GetSkillOTActionState(v)
         if IsEnemy(me.dwID, v.dwID) and (dwSkillId ==1645 or dwSkillId ==16381) then
             local dis = s_util.GetDistance(tar, v)
             if dis <=10 then return 2 end
@@ -46,7 +48,7 @@ s_tBuffFunc.ChFace = function ( ang )
     local rd = ((player.nFaceDirection+ang)%256)*math.pi/128
     local finX = (128)*math.cos(rd)+player.nX
     local finY = (128)*math.sin(rd)+player.nY
-    s_util.TurnTo(finX,finY)
+    s_util.TurnTo(finX, finY)
 end
 
 --爆发
@@ -138,5 +140,19 @@ end
 s_tBuffFunc.FengQingGong = function ( tar )
     local Buff = s_util.GetBuffInfo(tar)
     local IsBuff = Buff[562--[[吞日月]]] or Buff[562--[[千丝迷心]]] or Buff[562--[[迷幻]]] or Buff[562--[[身乏]]] or Buff[562--[[滞影]]] or Buff[562--[[玳弦]]] or Buff[1939--[[云景]]] or Buff[6074--[[恶狗拦路]]] or Buff[4497--[[幻相]]] or Buff[535--[[半步颠]]] or Buff[562--[[步残]]] or Buff[10246--[[重围]]] or Buff[562--[[行泽]]]
+    return IsBuff
+end
+
+--免封内
+s_tBuffFunc.MianFengNei = function ( tar )
+    local Buff = s_util.GetBuffInfo(tar)
+    local IsBuff = Buff[6350--[[临风]]] or Buff[6414--[[幻光步]]] or Buff[8864] or Buff[5777] or Buff[377--[[镇山河]]] or Buff[9934--[[南风吐月]]] or Buff[6256] or Buff[8458--[[水月无间]]] or Buff[1186--[[折骨]]] or Buff[4439--[[贪魔体]]] or Buff[6279] or Buff[4245--[[圣体]]] or Buff[9999--[[捣衣]]] or Buff[9342--[[石间意]]] or Buff[9509] or Buff[9506] or Buff[9693] or Buff[10173] or Buff[5789] or Buff[10618]
+    return IsBuff
+end
+
+--免推
+s_tBuffFunc.MianTui = function ( tar )
+    local Buff = s_util.GetBuffInfo(tar)
+    local IsBuff = Buff[8247--[[无惧]]] or Buff[8864] or Buff[2756--[[纵轻骑]]] or Buff[10245--[[破重围]]] or Buff[377--[[镇山河]]] or Buff[9934--[[南风吐月]]] or Buff[6213] or Buff[1903--[[啸日]]] or Buff[1856--[[不工]]] or Buff[1686--[[梦泉虎跑]]] or Buff[10130] or Buff[3425--[[鬼斧神工]]] or Buff[4439--[[贪魔体]]] or Buff[6279] or Buff[4245--[[圣体]]] or Buff[5754--[[霸体]]] or Buff[5995--[[笑醉狂]]] or Buff[8265--[[盾墙]]] or Buff[8303--[[盾立]]] or Buff[8483--[[盾毅]]] or Buff[9509] or Buff[9693] or Buff[10173] or Buff[11151--[[散流霞]]] or Buff[11336] or Buff[11361--[[尘身]]] or Buff[11385--[[西楚悲歌]]] or Buff[11319--[[临渊蹈河]]] or Buff[11322] or Buff[11335] or Buff[11310] or Buff[1186--[[折骨]]] or Buff[10258] or Buff[11077] or Buff[11148] or Buff[11149] or Buff[5994--[[酒中仙]]] or Buff[5996--[[笑醉狂]]] or Buff[8458--[[水月无间]]] or Buff[1802--[[御天]]]
     return IsBuff
 end
