@@ -425,7 +425,7 @@ s_tFightFunc[10242][2] = function()
 	--获取当前目标,未进战没目标直接返回,战斗中没目标选择最近敌对NPC,调整面向
 	local target, targetClass = s_util.GetTarget(player)							
 	if not player.bFightState and (not target or not IsEnemy(player.dwID, target.dwID) )then return end 
-	if player.bFightState and (not target or not IsEnemy(player.dwID, target.dwID) ) then  
+	--[[if player.bFightState and (not target or not IsEnemy(player.dwID, target.dwID) ) then  
 	local MinDistance = 20			--最小距离
 	local MindwID = 0		    --最近NPC的ID
 	for i,v in ipairs(GetAllNpc()) do		--遍历所有NPC
@@ -439,11 +439,11 @@ s_tFightFunc[10242][2] = function()
 	else	
 		SetTarget(TARGET.NPC, MindwID)  --设定目标为最近的敌对NPC                
 	end
-	end
+	end--]]
 	if target then s_util.TurnTo(target.nX,target.nY) end  --调整面向
 
 	--如果目标死亡，直接返回
-	if target.nMoveState == MOVE_STATE.ON_DEATH then return end
+	if not target or target.nMoveState == MOVE_STATE.ON_DEATH then return end
 
 	--判断目标读条，这里没有做处理，可以判断读条的技能ID做相应处理(打断、迎风回浪、挑起等等)
 	local bPrepare, dwSkillId, dwLevel, nLeftTime, nActionState =  GetSkillOTActionState(target)		--返回 是否在读条, 技能ID，等级，剩余时间(秒)，动作类型
